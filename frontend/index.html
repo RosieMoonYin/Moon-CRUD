@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/frontend/styles.css">
   <link rel="stylesheet" href="pico.min.css">
+  <link rel="stylesheet" href="/frontend/styles.css">
   <title>Hello Salties</title>
 
   <!-- This script loads text from the Back-End! 
@@ -21,7 +23,40 @@
 </head>
 
 <body>
-  <h1>This is your frontend!</h1>
+
+
+  <div class="container">
+    <h1>Welcome to your organized life</h1>
+    <br>
+    <p></p>
+    <h1>To-Do or not To-Do that is the question</h1>
+    <p>The secret of getting ahead is getting started. The secret of getting started is breaking your complex,
+      overwhelming tasks into small manageable tasks, and then starting on the first one.</p>
+
+
+
+    <div>
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute cat GIF" class="cute-gif">
+      <br><br><br>
+      <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="Add a new task">
+        <button type="submit">Add this task</button>
+      </form>
+      <ul class="clean-list" id="todo-list"></ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <script src="script.js"></script>
+    <br><br>
+    <button onclick="myFunction()">Meow!</button>
+    <p id="demo"></p>
+    <script>
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello organized world!";
+      }
+    </script>
+  </div>
 </body>
 
 </html>
