@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pico.min.css">
+  <title>Hello Salties</title>
+
+  <!-- This script loads text from the Back-End! 
+       You can move it to a seperate JavaScript file if you want!-->
+  <script type="module">
+    const text = await fetch("http://localhost:5117")
+      .then(response => response.text())
+
+    const newElement = document.createElement("h2");
+    newElement.append(text);
+    document.body.appendChild(newElement);
+  </script>
+
+</head>
+
+<body>
+  <h1>This is your frontend!</h1>
+</body>
+
+</html>
