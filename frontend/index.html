@@ -6,57 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/frontend/styles.css">
   <link rel="stylesheet" href="pico.min.css">
-  <link rel="stylesheet" href="/frontend/styles.css">
-  <title>Hello Salties</title>
+  <title>Moon Phase Calendar</title>
 
-  <!-- This script loads text from the Back-End! 
-       You can move it to a seperate JavaScript file if you want!-->
-  <script type="module">
-    const text = await fetch("http://localhost:5117")
-      .then(response => response.text())
-
-    const newElement = document.createElement("h2");
-    newElement.append(text);
-    document.body.appendChild(newElement);
-  </script>
 
 </head>
 
 <body>
-
-
   <div class="container">
-    <h1>Welcome to your organized life</h1>
-    <br>
-    <p></p>
-    <h1>To-Do or not To-Do that is the question</h1>
-    <p>The secret of getting ahead is getting started. The secret of getting started is breaking your complex,
-      overwhelming tasks into small manageable tasks, and then starting on the first one.</p>
+    <h1>Moon Phase Calendar</h1>
+    <p>Get to know the current phase of the moon and its details. Enter a date to check the status of the moon.</p>
 
-
-
-    <div>
-      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute cat GIF" class="cute-gif">
-      <br><br><br>
-      <form id="todo-form">
-        <input type="text" id="todo-input" placeholder="Add a new task">
-        <button type="submit">Add this task</button>
-      </form>
-      <ul class="clean-list" id="todo-list"></ul>
+    <div class="input-group">
+      <label for="date-input">Choose a Date:</label>
+      <input type="date" id="date-input">
+      <button onclick="fetchMoonPhase()">Get Moon Phase</button>
     </div>
-  </div>
 
-  <div class="container">
-    <script src="script.js"></script>
-    <br><br>
-    <button onclick="myFunction()">Meow!</button>
-    <p id="demo"></p>
-    <script>
-      function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello organized world!";
-      }
-    </script>
+    <div class="moon-phase" id="moon-phase">
+      <!-- Moon phase INFO HERE -->
+    </div>
+
+    <div class="journal-entry" id="journal-entry">
+      <h2>Journal Entry</h2>
+      <form id="journal-form">
+        <textarea id="journal-text" placeholder="Write your journal entry here..."></textarea>
+        <br>
+        <br>
+        <label for="mood-select">Mood:</label>
+        <select id="mood-select">
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="excited">Excited</option>
+          <option value="tired">Tired</option>
+          <option value="angry">Angry</option>
+          <option value="anxious">Anxious</option>
+        </select>
+        <br>
+        <button type="button" onclick="saveJournalEntry()">Save Entry</button>
+      </form>
+      <div id="journal-display">
+        <!-- SHOW HERE -->
+      </div>
+    </div>
+    <p class="smallprint">We are in the Beta phase, future development will integrate a moon diary for you to input
+      moods
+      and corellate them with phases of the moon.</p>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
